@@ -1,0 +1,20 @@
+INFO:root:Parameter grid:
+{'cls__n_estimators': [10, 50, 100, 150, 200], 'cls__class_weight': [None, 'balanced', 'balanced_subsample']}
+
+INFO:root:Best parameters:
+{'cls__class_weight': 'balanced', 'cls__n_estimators': 150}
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.73      0.56      0.63       648
+         OFF       0.43      0.62      0.51       352
+
+    accuracy                           0.58      1000
+   macro avg       0.58      0.59      0.57      1000
+weighted avg       0.63      0.58      0.59      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  360  288
+OFF  132  220

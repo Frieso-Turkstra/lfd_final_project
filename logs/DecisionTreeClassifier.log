@@ -1,0 +1,20 @@
+INFO:root:Parameter grid:
+{'cls__criterion': ['gini', 'entropy', 'log_loss'], 'cls__splitter': ['best', 'random'], 'cls__max_depth': [None, 3, 5, 10, 25, 50], 'cls__max_features': [None, 'auto', 'log2', 'sqrt'], 'cls__class_weight': [None, 'balanced']}
+
+INFO:root:Best parameters:
+{'cls__class_weight': 'balanced', 'cls__criterion': 'gini', 'cls__max_depth': 5, 'cls__max_features': None, 'cls__splitter': 'best'}
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.70      0.58      0.63       648
+         OFF       0.41      0.54      0.47       352
+
+    accuracy                           0.56      1000
+   macro avg       0.55      0.56      0.55      1000
+weighted avg       0.60      0.56      0.57      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  374  274
+OFF  162  190
