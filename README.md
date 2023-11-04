@@ -2,7 +2,7 @@
 
 ## How to run the SVM:
 
-To train and evaluate an SVM, simply run the pipeline_svm.sh file:
+To train and evaluate an SVM, simply run the 'pipeline_svm.sh' file:
 
 '''
 python train_svm.py -t ../data/twitter/train.tsv -v ../data/twitter/test.tsv svcl_twitter
