@@ -1,0 +1,375 @@
+#-----------------------------------------------------Grid search: MultinomialNB
+
+INFO:root:Evaluation:
+              precision    recall  f1-score   support
+
+         NOT       0.68      0.58      0.62       648
+         OFF       0.39      0.49      0.43       352
+
+    accuracy                           0.55      1000
+   macro avg       0.53      0.53      0.53      1000
+weighted avg       0.57      0.55      0.56      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  373  275
+OFF  179  173
+
+#--------------------------------------------Grid search: DecisionTreeClassifier
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.70      0.58      0.63       648
+         OFF       0.41      0.54      0.47       352
+
+    accuracy                           0.56      1000
+   macro avg       0.55      0.56      0.55      1000
+weighted avg       0.60      0.56      0.57      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  374  274
+OFF  162  190
+
+#--------------------------------------------Grid search: RandomForestClassifier
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.73      0.56      0.63       648
+         OFF       0.43      0.62      0.51       352
+
+    accuracy                           0.58      1000
+   macro avg       0.58      0.59      0.57      1000
+weighted avg       0.63      0.58      0.59      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  360  288
+OFF  132  220
+
+#----------------------------------------------Grid search: KNeighborsClassifier
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.67      0.74      0.71       648
+         OFF       0.41      0.33      0.36       352
+
+    accuracy                           0.60      1000
+   macro avg       0.54      0.54      0.53      1000
+weighted avg       0.58      0.60      0.58      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  482  166
+OFF  237  115
+
+#---------------------------------------------------------------Grid search: SVC
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.70      0.67      0.68       648
+         OFF       0.43      0.46      0.45       352
+
+    accuracy                           0.59      1000
+   macro avg       0.56      0.56      0.56      1000
+weighted avg       0.60      0.59      0.60      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  432  216
+OFF  189  163
+
+#-------------------------------------------------Grid search: LinearSVC_Twitter
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.71      0.63      0.67       648
+         OFF       0.44      0.53      0.48       352
+
+    accuracy                           0.59      1000
+   macro avg       0.57      0.58      0.57      1000
+weighted avg       0.61      0.59      0.60      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  410  238
+OFF  167  185
+
+#------------------------------------------------Grid search: LinearSVC_Telegram
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.92      0.79      0.85      1584
+         OFF       0.36      0.62      0.45       290
+
+    accuracy                           0.77      1874
+   macro avg       0.64      0.71      0.65      1874
+weighted avg       0.83      0.77      0.79      1874
+
+INFO:root:Confusion matrix:
+      NOT  OFF
+NOT  1259  325
+OFF   110  180
+
+#-------------------------------------------Three reruns: DecisionTreeClassifier
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.73      0.44      0.55       620
+         OFF       0.29      0.59      0.39       240
+
+    accuracy                           0.48       860
+   macro avg       0.51      0.51      0.47       860
+weighted avg       0.61      0.48      0.50       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  271  349
+OFF   99  141
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.73      0.44      0.55       620
+         OFF       0.29      0.59      0.39       240
+
+    accuracy                           0.48       860
+   macro avg       0.51      0.51      0.47       860
+weighted avg       0.61      0.48      0.50       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  272  348
+OFF   99  141
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.73      0.44      0.55       620
+         OFF       0.29      0.59      0.39       240
+
+    accuracy                           0.48       860
+   macro avg       0.51      0.51      0.47       860
+weighted avg       0.61      0.48      0.50       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  272  348
+OFF   99  141
+
+#-------------------------------------------Three reruns: RandomForestClassifier
+
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.76      0.50      0.60       620
+         OFF       0.32      0.60      0.42       240
+
+    accuracy                           0.53       860
+   macro avg       0.54      0.55      0.51       860
+weighted avg       0.64      0.53      0.55       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  307  313
+OFF   95  145
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.76      0.47      0.58       620
+         OFF       0.31      0.62      0.42       240
+
+    accuracy                           0.51       860
+   macro avg       0.54      0.55      0.50       860
+weighted avg       0.64      0.51      0.53       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  291  329
+OFF   91  149
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.76      0.47      0.58       620
+         OFF       0.31      0.62      0.41       240
+
+    accuracy                           0.51       860
+   macro avg       0.53      0.54      0.49       860
+weighted avg       0.63      0.51      0.53       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  289  331
+OFF   92  148
+
+#--------------------------------------------------------------Three reruns: SVC
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.70      0.73       620
+         OFF       0.37      0.44      0.40       240
+
+    accuracy                           0.63       860
+   macro avg       0.57      0.57      0.57       860
+weighted avg       0.65      0.63      0.64       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  437  183
+OFF  134  106
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.70      0.73       620
+         OFF       0.37      0.44      0.40       240
+
+    accuracy                           0.63       860
+   macro avg       0.57      0.57      0.57       860
+weighted avg       0.65      0.63      0.64       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  437  183
+OFF  134  106
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.70      0.73       620
+         OFF       0.37      0.44      0.40       240
+
+    accuracy                           0.63       860
+   macro avg       0.57      0.57      0.57       860
+weighted avg       0.65      0.63      0.64       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  437  183
+OFF  134  106
+
+#------------------------------------------------Three reruns: LinearSVC_Twitter
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.67      0.72       620
+         OFF       0.36      0.48      0.41       240
+
+    accuracy                           0.62       860
+   macro avg       0.57      0.58      0.57       860
+weighted avg       0.66      0.62      0.63       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  418  202
+OFF  125  115
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.67      0.72       620
+         OFF       0.36      0.48      0.41       240
+
+    accuracy                           0.62       860
+   macro avg       0.57      0.58      0.56       860
+weighted avg       0.66      0.62      0.63       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  417  203
+OFF  125  115
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.67      0.72       620
+         OFF       0.36      0.47      0.41       240
+
+    accuracy                           0.62       860
+   macro avg       0.56      0.57      0.56       860
+weighted avg       0.65      0.62      0.63       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  416  204
+OFF  126  114
+
+#----------------------------------LinearSVC_Twitter: CountVectorizer + unigrams
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.71      0.63      0.67       648
+         OFF       0.44      0.53      0.48       352
+
+    accuracy                           0.59      1000
+   macro avg       0.57      0.58      0.57      1000
+weighted avg       0.61      0.59      0.60      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  409  239
+OFF  167  185
+
+#----------------------------------LinearSVC_Twitter: TfidfVectorizer + unigrams
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.73      0.55      0.63       648
+         OFF       0.43      0.61      0.50       352
+
+    accuracy                           0.57      1000
+   macro avg       0.58      0.58      0.57      1000
+weighted avg       0.62      0.57      0.58      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  359  289
+OFF  136  216
+
+#-------------LinearSVC_Twitter: TfidfVectorizer + unigrams + bigrams + trigrams
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.72      0.75       648
+         OFF       0.54      0.61      0.57       352
+
+    accuracy                           0.68      1000
+   macro avg       0.66      0.67      0.66      1000
+weighted avg       0.69      0.68      0.69      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  467  181
+OFF  137  215
+
+#-------------LinearSVC_Twitter: CountVectorizer + unigrams + bigrams + trigrams
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.80      0.78      0.79       648
+         OFF       0.61      0.65      0.63       352
+
+    accuracy                           0.73      1000
+   macro avg       0.71      0.71      0.71      1000
+weighted avg       0.74      0.73      0.73      1000
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  504  144
+OFF  123  229

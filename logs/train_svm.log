@@ -1,0 +1,49 @@
+#-----------------------------------------------------Grid search: MultinomialNB
+
+INFO:root:Parameter grid:
+{'cls__alpha': [1e-05, 0.0001, 0.001, 0.1, 1, 10, 100, 1000], 'cls__fit_prior': [True, False]}
+INFO:root:Best parameters:
+{'cls__alpha': 10, 'cls__fit_prior': True}
+
+#--------------------------------------------Grid search: DecisionTreeClassifier
+
+INFO:root:Parameter grid:
+{'cls__criterion': ['gini', 'entropy', 'log_loss'], 'cls__splitter': ['best', 'random'], 'cls__max_depth': [None, 3, 5, 10, 25, 50], 'cls__max_features': [None, 'auto', 'log2', 'sqrt'], 'cls__class_weight': [None, 'balanced']}
+INFO:root:Best parameters:
+{'cls__class_weight': 'balanced', 'cls__criterion': 'gini', 'cls__max_depth': 5, 'cls__max_features': None, 'cls__splitter': 'best'}
+
+#--------------------------------------------Grid search: RandomForestClassifier
+
+INFO:root:Parameter grid:
+{'cls__n_estimators': [10, 50, 100, 150, 200], 'cls__class_weight': [None, 'balanced', 'balanced_subsample']}
+INFO:root:Best parameters:
+{'cls__class_weight': 'balanced', 'cls__n_estimators': 150}
+
+#----------------------------------------------Grid search: KNeighborsClassifier
+
+INFO:root:Parameter grid:
+{'cls__n_neighbors': [3, 5, 15, 25, 35, 45, 55, 75], 'cls__weights': ['uniform', 'distance'], 'cls__algorithm': ['brute', 'ball_tree', 'kd_tree']}
+INFO:root:Best parameters:
+{'cls__algorithm': 'brute', 'cls__n_neighbors': 3, 'cls__weights': 'distance'}
+
+#---------------------------------------------------------------Grid search: SVC
+
+INFO:root:Parameter grid:
+{'cls__kernel': ['linear', 'poly', 'rbf', 'sigmoid', 'precomputed'], 'cls__gamma': ['scale', 'auto'], 'cls__class_weight': ['balanced', None]}
+INFO:root:Best parameters:
+{'cls__class_weight': 'balanced', 'cls__gamma': 'scale', 'cls__kernel': 'linear'}
+
+#-------------------------------------------------Grid search: LinearSVC_Twitter
+
+INFO:root:Parameter grid:
+{'cls__C': [0.1, 1, 10, 100], 'cls__class_weight': [None, 'balanced'], 'cls__dual': [True, False], 'cls__loss': ['hinge', 'squared_hinge'], 'cls__penalty': ['l1', 'l2']}
+
+INFO:root:Best parameters:
+{'cls__C': 0.1, 'cls__class_weight': 'balanced', 'cls__dual': False, 'cls__loss': 'squared_hinge', 'cls__penalty': 'l1'}
+
+#------------------------------------------------Grid search: LinearSVC_Telegram
+
+INFO:root:Parameter grid:
+{'cls__C': [0.1, 1, 10, 100], 'cls__class_weight': [None, 'balanced'], 'cls__dual': [True, False], 'cls__loss': ['hinge', 'squared_hinge'], 'cls__penalty': ['l1', 'l2']}
+INFO:root:Best parameters:
+{'cls__C': 1, 'cls__class_weight': 'balanced', 'cls__dual': True, 'cls__loss': 'hinge', 'cls__penalty': 'l2'}

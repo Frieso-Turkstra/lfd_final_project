@@ -1,0 +1,400 @@
+#----------All results obtained with CountVectorizer with uni-, bi- and trigrams
+
+#------------------------------------------Trained on twitter, tested on twitter
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.82      0.84      0.83       620
+         OFF       0.57      0.54      0.55       240
+
+    accuracy                           0.76       860
+   macro avg       0.70      0.69      0.69       860
+weighted avg       0.75      0.76      0.75       860
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.82      0.83      0.83       620
+         OFF       0.55      0.53      0.54       240
+
+    accuracy                           0.75       860
+   macro avg       0.69      0.68      0.68       860
+weighted avg       0.75      0.75      0.75       860
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.82      0.83      0.82       620
+         OFF       0.55      0.53      0.54       240
+
+    accuracy                           0.75       860
+   macro avg       0.68      0.68      0.68       860
+weighted avg       0.74      0.75      0.74       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  515  105
+OFF  114  126
+
+#-----------------------------------------Trained on twitter, tested on telegram
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.92      0.89      0.90      1393
+         OFF       0.41      0.49      0.45       219
+
+    accuracy                           0.83      1612
+   macro avg       0.66      0.69      0.67      1612
+weighted avg       0.85      0.83      0.84      1612
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.92      0.89      0.90      1393
+         OFF       0.41      0.49      0.45       219
+
+    accuracy                           0.83      1612
+   macro avg       0.66      0.69      0.67      1612
+weighted avg       0.85      0.83      0.84      1612
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.92      0.89      0.90      1393
+         OFF       0.41      0.49      0.44       219
+
+    accuracy                           0.83      1612
+   macro avg       0.66      0.69      0.67      1612
+weighted avg       0.85      0.83      0.84      1612
+
+INFO:root:Confusion matrix:
+      NOT  OFF
+NOT  1237  156
+OFF   112  107
+
+#-----------------------------Trained on twitter, tested on telegram_downsampled
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.87      0.89      0.88       652
+         OFF       0.63      0.58      0.61       209
+
+    accuracy                           0.82       861
+   macro avg       0.75      0.74      0.74       861
+weighted avg       0.81      0.82      0.81       861
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.87      0.90      0.88       652
+         OFF       0.64      0.58      0.61       209
+
+    accuracy                           0.82       861
+   macro avg       0.76      0.74      0.75       861
+weighted avg       0.81      0.82      0.82       861
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.87      0.90      0.89       652
+         OFF       0.65      0.58      0.61       209
+
+    accuracy                           0.82       861
+   macro avg       0.76      0.74      0.75       861
+weighted avg       0.82      0.82      0.82       861
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  588   64
+OFF   88  121
+
+INFO:root:Features:     coefficient             word
+0     -0.531425          parents
+1     -0.465163             best
+2     -0.452338        statement
+3     -0.446797        the @USER
+4     -0.426148            life.
+5     -0.425817          that it
+6     -0.416687  @USER Funny how
+7     -0.415691           voting
+8     -0.381053            issue
+9     -0.366908          awesome
+10    -0.361473        beautiful
+11    -0.361276    @USER Can you
+12    -0.344846        Feinstein
+13    -0.339863         you know
+14    -0.335047           Didn’t
+15    -0.331549          be more
+16    -0.328869             Love
+17    -0.327889            Thank
+18    -0.317778          URL URL
+19    -0.316153            left.
+
+#----------------------------------------Trained on telegram, tested on telegram
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.94      0.97      0.96      1393
+         OFF       0.80      0.62      0.70       219
+
+    accuracy                           0.93      1612
+   macro avg       0.87      0.80      0.83      1612
+weighted avg       0.92      0.93      0.92      1612
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.94      0.97      0.96      1393
+         OFF       0.80      0.62      0.70       219
+
+    accuracy                           0.93      1612
+   macro avg       0.87      0.80      0.83      1612
+weighted avg       0.92      0.93      0.92      1612
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.94      0.97      0.96      1393
+         OFF       0.80      0.62      0.70       219
+
+    accuracy                           0.93      1612
+   macro avg       0.87      0.80      0.83      1612
+weighted avg       0.92      0.93      0.92      1612
+
+INFO:root:Confusion matrix:
+      NOT  OFF
+NOT  1358   35
+OFF    83  136
+
+#-----------------------------------------Trained on telegram, tested on twitter
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.76      0.77       620
+         OFF       0.40      0.42      0.41       240
+
+    accuracy                           0.67       860
+   macro avg       0.59      0.59      0.59       860
+weighted avg       0.67      0.67      0.67       860
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.76      0.77       620
+         OFF       0.40      0.42      0.41       240
+
+    accuracy                           0.67       860
+   macro avg       0.59      0.59      0.59       860
+weighted avg       0.67      0.67      0.67       860
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.76      0.77       620
+         OFF       0.40      0.42      0.41       240
+
+    accuracy                           0.67       860
+   macro avg       0.59      0.59      0.59       860
+weighted avg       0.67      0.67      0.67       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  472  148
+OFF  140  100
+
+#----------------------------Trained on telegram, tested on telegram_downsampled
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.76      0.77       620
+         OFF       0.40      0.42      0.41       240
+
+    accuracy                           0.67       860
+   macro avg       0.59      0.59      0.59       860
+weighted avg       0.67      0.67      0.67       860
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.76      0.77       620
+         OFF       0.40      0.42      0.41       240
+
+    accuracy                           0.67       860
+   macro avg       0.59      0.59      0.59       860
+weighted avg       0.67      0.67      0.67       860
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.76      0.77       620
+         OFF       0.40      0.42      0.41       240
+
+    accuracy                           0.67       860
+   macro avg       0.59      0.59      0.59       860
+weighted avg       0.67      0.67      0.67       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  472  148
+OFF  140  100
+
+INFO:root:Features:     coefficient              word
+0     -1.166727         Who cares
+1     -0.813987             cares
+2     -0.655732         Who knows
+3     -0.586932             He’ll
+4     -0.586932        He’ll yeah
+5     -0.586932         Oh, yeah.
+6     -0.586932  Stop advertising
+7     -0.586932       Stop coping
+8     -0.586932         Yeah it’s
+9     -0.586932    Yeah it’s fake
+10    -0.586932    Yeah probably.
+11    -0.586932          Yeah tru
+12    -0.586932        black nazi
+13    -0.586932            coping
+14    -0.586932         fight now
+15    -0.586932   like that idea.
+16    -0.586932        that idea.
+17    -0.586932               tru
+18    -0.586932           yo guys
+19    -0.585605       advertising
+
+#----------------Trained on telegram_downsampled, tested on telegram_downsampled
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.91      0.97      0.94       652
+         OFF       0.87      0.69      0.77       209
+
+    accuracy                           0.90       861
+   macro avg       0.89      0.83      0.85       861
+weighted avg       0.90      0.90      0.90       861
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.91      0.97      0.94       652
+         OFF       0.87      0.69      0.77       209
+
+    accuracy                           0.90       861
+   macro avg       0.89      0.83      0.85       861
+weighted avg       0.90      0.90      0.90       861
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.91      0.97      0.94       652
+         OFF       0.87      0.69      0.77       209
+
+    accuracy                           0.90       861
+   macro avg       0.89      0.83      0.85       861
+weighted avg       0.90      0.90      0.90       861
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  630   22
+OFF   64  145
+
+#----------------------------Trained on telegram_downsampled, tested on telegram
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.91      0.97      0.94       652
+         OFF       0.87      0.69      0.77       209
+
+    accuracy                           0.90       861
+   macro avg       0.89      0.83      0.85       861
+weighted avg       0.90      0.90      0.90       861
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.91      0.97      0.94       652
+         OFF       0.87      0.69      0.77       209
+
+    accuracy                           0.90       861
+   macro avg       0.89      0.83      0.85       861
+weighted avg       0.90      0.90      0.90       861
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.91      0.97      0.94       652
+         OFF       0.87      0.69      0.77       209
+
+    accuracy                           0.90       861
+   macro avg       0.89      0.83      0.85       861
+weighted avg       0.90      0.90      0.90       861
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  630   22
+OFF   64  145
+
+#-----------------------------Trained on telegram_downsampled, tested on twitter
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.63      0.69       620
+         OFF       0.35      0.51      0.41       240
+
+    accuracy                           0.60       860
+   macro avg       0.56      0.57      0.55       860
+weighted avg       0.65      0.60      0.62       860
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.63      0.69       620
+         OFF       0.35      0.51      0.41       240
+
+    accuracy                           0.60       860
+   macro avg       0.56      0.57      0.55       860
+weighted avg       0.65      0.60      0.62       860
+
+INFO:root:Classification report:
+              precision    recall  f1-score   support
+
+         NOT       0.77      0.63      0.69       620
+         OFF       0.35      0.51      0.41       240
+
+    accuracy                           0.60       860
+   macro avg       0.56      0.57      0.55       860
+weighted avg       0.65      0.60      0.62       860
+
+INFO:root:Confusion matrix:
+     NOT  OFF
+NOT  392  228
+OFF  118  122
+
+INFO:root:Features:     coefficient             word
+0     -0.694394        For real?
+1     -0.694394        Oh, yeah.
+2     -0.694394        fight now
+3     -0.688848              Oh,
+4     -0.666665            idea.
+5     -0.666665  like that idea.
+6     -0.666665       that idea.
+7     -0.597475          Who did
+8     -0.597475       Who did it
+9     -0.571562        Yeah it's
+10    -0.488236           did it
+11    -0.486018              For
+12    -0.469005          My chat
+13    -0.467517          a while
+14    -0.456477         Fake and
+15    -0.456477     Fake and gay
+16    -0.454819             chat
+17    -0.451541      for a while
+18    -0.442248      You have an
+19    -0.442248       an iPhone?
