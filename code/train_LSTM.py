@@ -33,8 +33,8 @@ def create_arg_parser():
                         help="If added, use trained model to predict on test set")
     parser.add_argument("-of", "--output_file", type=str, default="predictions.json",
                         help="Specify a file to save predictions on the test file to (default predictions.json)")
-    parser.add_argument("-e", "--embeddings", default='glove_twitter100.json', type=str,
-                        help="Embedding file we are using (default glove_twitter100.json)")
+    parser.add_argument("-em", "--embedding_matrix", default='embed_matrix.npy', type=str,
+                        help="Embedding matrix to use (default embed_matrix.npy)")
     parser.add_argument("-te", "--trainable_embeddings", action="store_true",
                         help="Make pre-trained embeddings trainable")
     parser.add_argument("-lr", "--learning_rate", type=float, default=0.004,
@@ -46,29 +46,6 @@ def create_arg_parser():
     args = parser.parse_args()
     return args
 
-
-
-def read_embeddings(embeddings_file):
-    '''Read in word embeddings from file and save as numpy array'''
-    embeddings = json.load(open(embeddings_file, 'r'))
-    return {word: np.array(embeddings[word]) for word in embeddings}
-
-
-def get_emb_matrix(voc, emb):
-    '''Get embedding matrix given vocab and the embeddings'''
-    num_tokens = len(voc) + 2
-    word_index = dict(zip(voc, range(len(voc))))
-    # Bit hacky, get embedding dimension from the word "the"
-    embedding_dim = len(emb["the"])
-    # Prepare embedding matrix to the correct size
-    embedding_matrix = np.zeros((num_tokens, embedding_dim))
-    for word, i in word_index.items():
-        embedding_vector = emb.get(word)
-        if embedding_vector is not None:
-            # Words not found in embedding index will be all-zeros.
-            embedding_matrix[i] = embedding_vector
-    # Final matrix with pretrained embeddings that we can feed to embedding layer
-    return embedding_matrix
 
 
 def create_model(Y_train, emb_matrix, learning_rate, number_of_layers, trainable_embeddings):
@@ -117,21 +94,17 @@ def main():
     # Read in the data and embeddings
     X_train, Y_train = read_corpus_lstm(args.train_file)
     X_dev, Y_dev = read_corpus_lstm(args.dev_file)
-    embeddings = read_embeddings(args.embeddings)
-
     # Transform words to indices using a vectorizer
     vectorizer = TextVectorization(standardize=None, output_sequence_length=50)
-    # Use train and dev to create vocab - could also do just train
-    text_ds = tf.data.Dataset.from_tensor_slices(X_train + X_dev)
-    vectorizer.adapt(text_ds)
-    # Dictionary mapping words to idx
-    voc = vectorizer.get_vocabulary()
-    emb_matrix = get_emb_matrix(voc, embeddings)
-
     # Transform string labels to one-hot encodings
     encoder = LabelBinarizer()
     Y_train_bin = encoder.fit_transform(Y_train)  # Use encoder.classes_ to find mapping back
     Y_dev_bin = encoder.fit_transform(Y_dev)
+    # Use train and dev to create vocab
+    text_ds = tf.data.Dataset.from_tensor_slices(X_train + X_dev)
+    vectorizer.adapt(text_ds)
+    #load in the embedding matrix
+    emb_matrix = np.load(args.embedding_matrix)
 
     # Create model
     model = create_model(Y_train, emb_matrix, args.learning_rate, args.lstm_layers, args.trainable_embeddings)
@@ -157,3 +130,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
