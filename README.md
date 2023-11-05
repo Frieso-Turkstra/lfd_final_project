@@ -1,5 +1,11 @@
 # lfd_final_project
 
+## Dependencies
+
+To install all the necessary dependencies, run the following command:
+
+> pip install -r requirements.txt
+
 ## How to run the SVM:
 
 To train and evaluate an SVM, simply run the 'pipeline_svm.sh' file:
