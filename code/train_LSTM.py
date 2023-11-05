@@ -5,9 +5,9 @@ The current model is a single layer bi-directional model.
 The number of layers can be changed with a command line argument (i.e: -nl 3).
 
 To run the script and return a .json file of predictions on the test set for evaluation, 
-assuming the train.txt, dev.txt and test.txt are in the same folder, use this command:
+assuming the train.tsv, dev.tsv and test.tsv are in the same folder, use this command:
 
-> python train_LSTM.py --train_file train.txt --dev_file dev.txt --test_file test.txt --embeddings glove_twitter100.json
+> python train_LSTM.py --train_file train.tsv --dev_file dev.tsv --test_file test.tsv --embeddings glove_twitter100.json --output_file predictions.json
 '''
 
 import json
@@ -21,7 +21,7 @@ from sklearn.preprocessing import LabelBinarizer
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.layers import TextVectorization
 import tensorflow as tf
-from utils import read_corpus
+from utils import read_corpus_lstm
 
 def create_arg_parser():
     parser = argparse.ArgumentParser()
@@ -31,6 +31,8 @@ def create_arg_parser():
                         help="Separate dev set to read in (default dev.tsv)")
     parser.add_argument("-t", "--test_file", type=str,
                         help="If added, use trained model to predict on test set")
+    parser.add_argument("-of", "--output_file", type=str, default="predictions.json",
+                        help="Specify a file to save predictions on the test file to (default predictions.json)")
     parser.add_argument("-e", "--embeddings", default='glove_twitter100.json', type=str,
                         help="Embedding file we are using (default glove_twitter100.json)")
     parser.add_argument("-te", "--trainable_embeddings", action="store_true",
@@ -43,6 +45,7 @@ def create_arg_parser():
                         help="Set the number of bidirectional LSTM layers for the model, from a range of 1 to 5 (default 1)")
     args = parser.parse_args()
     return args
+
 
 
 def read_embeddings(embeddings_file):
@@ -83,7 +86,7 @@ def create_model(Y_train, emb_matrix, learning_rate, number_of_layers, trainable
         model.add(Embedding(num_tokens, embedding_dim, embeddings_initializer=Constant(emb_matrix),trainable=True))
     else:
         model.add(Embedding(num_tokens, embedding_dim, embeddings_initializer=Constant(emb_matrix),trainable=False))
-    for layer in range(number_of_layers)-1:
+    for layer in range(number_of_layers - 1):
         model.add(Bidirectional(LSTM(64, return_sequences=True)))
     model.add(Bidirectional(LSTM(units=64)))
     model.add(Dense(units=num_labels, activation="sigmoid"))
@@ -112,8 +115,8 @@ def main():
     args = create_arg_parser()
 
     # Read in the data and embeddings
-    X_train, Y_train = read_corpus(args.train_file)
-    X_dev, Y_dev = read_corpus(args.dev_file)
+    X_train, Y_train = read_corpus_lstm(args.train_file)
+    X_dev, Y_dev = read_corpus_lstm(args.dev_file)
     embeddings = read_embeddings(args.embeddings)
 
     # Transform words to indices using a vectorizer
@@ -143,12 +146,14 @@ def main():
     # Do predictions on specified test set and store them for evaluation
     if args.test_file:
         # Read in test set and vectorize
-        X_test, Y_test = read_corpus(args.test_file)
+        X_test, Y_test = read_corpus_lstm(args.test_file)
         X_test_vect = vectorizer(np.array([[s] for s in X_test])).numpy()
         # Use the fitted model to predict classes on the test data
         Y_pred = model.predict(X_test_vect)
+        # Convert back to labels
+        Y_pred_labels = encoder.inverse_transform(Y_pred)
         # Save the predictions to an output file
-        json.dump(list(Y_pred), open(args.output_file, "w"))
+        json.dump(list(Y_pred_labels), open(args.output_file, "w"))
 
 if __name__ == '__main__':
     main()
