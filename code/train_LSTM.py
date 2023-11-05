@@ -7,7 +7,7 @@ The number of layers can be changed with a command line argument (i.e: -nl 3).
 To run the script and return a .json file of predictions on the test set for evaluation, 
 assuming the train.txt, dev.txt and test.txt are in the same folder, use this command:
 
-> python lfd_assignment3.py --train_file train.txt --dev_file dev.txt --test_file test.txt --embeddings glove_twitter100.json
+> python train_LSTM.py --train_file train.txt --dev_file dev.txt --test_file test.txt --embeddings glove_twitter100.json
 '''
 
 import json
