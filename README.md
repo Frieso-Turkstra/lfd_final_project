@@ -8,7 +8,7 @@ To install all the necessary dependencies, run the following command:
 
 ## How to run the SVM:
 
-To train and evaluate an SVM, simply run the 'pipeline_svm.sh' file:
+To train and evaluate an SVM, simply run the 'pipeline_svm.sh' file from the code directory:
 
 > python train_svm.py -t ../data/twitter/train.tsv -v ../data/twitter/test.tsv svcl_twitter  
 > python evaluate.py -i predictions.json -v ../data/twitter/test.tsv 
