@@ -25,7 +25,7 @@ def evaluate(Y_test, Y_pred):
     ''' Takes in true labels Y_test, predicted labels Y_pred.
     Returns a classification report (precision, recall
     and F1 score for each class) and a confusion matrix with labels.'''
-    report = classification_report(Y_test, Y_pred)
+    report = classification_report(Y_test, Y_pred, digits=3)
 
     # Create a confusion matrix with labels
     labels = np.unique(Y_test)
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # Retrieve the classification report and confusion matrix
     report, error_matrix = evaluate(labels, predictions)
     print(report)
-
+    
     # Log the scores and confusion matrix 
     logging.basicConfig(filename=args.log_file, encoding='utf-8', level=logging.DEBUG)
     logging.info(f'Classification report:\n{report}')
