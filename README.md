@@ -25,3 +25,13 @@ Similarly, to train and evaluate an LSTM, run the 'pipeline_LSTM.sh' from the co
 
 The script takes a train, dev, and test file as parameters, as well as an embedding matrix, which can be created beforehand using the 'create_embed_matrix.py' script. 
 The embedding matrix in the data folder was created using this script, based on the 100 dimension GloVe twitter embeddings, and the vocabulary from the train and dev sets of the Twitter corpus.
+
+## How to run the PLM:
+The pre-trained models were finetuned using a Jupyter Notebook (train_plm.ipynb) so it can be run on Google Colab using GPU. This notebook expects the data folder from this repository to be in a folder called 'LFD_FP' in your personal Google Drive.
+
+To evaluate the models, run the 'pipeline_plm.sh' file from the code directory:
+
+> python test_PLM.py -in ../data/twitter/test.tsv -twitter
+> python evaluate.py -i predictions.json -v ../data/twitter/test.tsv
+
+The fine-tuned model will be downloaded from HuggingFace and used to create and evaluate predictions based on a test file. Using the .sh file, the Twitter model will be loaded in. To load in the Telegram model, change -twitter to -telegram.
