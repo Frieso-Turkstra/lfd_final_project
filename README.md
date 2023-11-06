@@ -20,7 +20,7 @@ To switch between datasets or models, simply swap 'twitter' for 'telegram' or vi
 ## How to run the LSTM:
 Similarly, to train and evaluate an LSTM, run the 'pipeline_LSTM.sh' from the code directory:
 
-> python train_LSTM.py -i ../data/twitter/train.tsv -d ../data/twitter/dev.tsv -t ../data/twitter/test.tsv -em ../data/embed_matrix.npy
+> python train_LSTM.py -i ../data/twitter/train.tsv -d ../data/twitter/dev.tsv -t ../data/twitter/test.tsv -em ../data/embed_matrix.npy  
 > python evaluate.py -i predictions.json -v ../data/twitter/test.tsv
 
 The script takes a train, dev, and test file as parameters, as well as an embedding matrix, which can be created beforehand using the 'create_embed_matrix.py' script. 
@@ -31,7 +31,7 @@ The pre-trained models were finetuned using a Jupyter Notebook (train_plm.ipynb)
 
 To evaluate the models, run the 'pipeline_plm.sh' file from the code directory:
 
-> python test_PLM.py -in ../data/twitter/test.tsv -twitter
+> python test_PLM.py -in ../data/twitter/test.tsv -twitter  
 > python evaluate.py -i predictions.json -v ../data/twitter/test.tsv
 
 The fine-tuned model will be downloaded from HuggingFace and used to create and evaluate predictions based on a test file. Using the .sh file, the Twitter model will be loaded in. To load in the Telegram model, change -twitter to -telegram.
