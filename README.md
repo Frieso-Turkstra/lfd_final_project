@@ -31,7 +31,7 @@ The pre-trained models were finetuned using a Jupyter Notebook (train_plm.ipynb)
 
 To evaluate the models, run the 'pipeline_plm.sh' file from the scripts directory:
 
-> python ../code/test_PLM.py -in ../data/twitter/test.tsv -twitter
+> python ../code/test_PLM.py -in ../data/twitter/test.tsv -twitter  
 > python ../code/evaluate.py -i ../code/predictions.json -v ../data/twitter/test.tsv
 
 The fine-tuned model will be downloaded from HuggingFace and used to create and evaluate predictions based on a test file. Using the .sh file, the Twitter model will be loaded in. To load in the Telegram model, change -twitter to -telegram.
