@@ -119,7 +119,7 @@ def main():
     # Do predictions on specified test set and store them for evaluation
     if args.test_file:
         # Read in test set and vectorize
-        X_test, Y_test = read_corpus_lstm(args.test_file)
+        X_test, Y_test = read_corpus(args.test_file)
         X_test_vect = vectorizer(np.array([[s] for s in X_test])).numpy()
         # Use the fitted model to predict classes on the test data
         Y_pred = model.predict(X_test_vect)
