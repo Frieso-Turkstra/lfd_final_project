@@ -197,6 +197,7 @@ if __name__ == '__main__':
     # Create the test and training sets with appropriate labels
     X_train, Y_train = read_corpus(args.train_file)
     X_dev, Y_dev = read_corpus(args.validation_file)
+    X_train, X_dev = X_train.split(), X_dev.split()
 
     # Get the classifier and set hyperparameters based on command line arguments
     classifier = get_classifier(args)
