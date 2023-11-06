@@ -2,7 +2,7 @@ import json
 import numpy as np
 import argparse
 from tensorflow.keras.layers import TextVectorization
-from utils import read_corpus_lstm
+from utils import read_corpus
 import tensorflow as tf
 
 '''This script can be used to generate an embedding matrix for use in LSTM experiments.
