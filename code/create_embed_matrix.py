@@ -51,7 +51,7 @@ def get_emb_matrix(voc, emb, output_file):
 def main():
     args = create_arg_parser()
     embeddings = read_embeddings(args.embeddings)
-    X_train, Y_train = read_corpus_lstm(args.input_file)
+    X_train, Y_train = read_corpus(args.input_file)
     vectorizer = TextVectorization(standardize=None, output_sequence_length=50)
     if args.additional_file:
         X_dev, Y_dev = read_corpus_lstm(args.additional_file)
